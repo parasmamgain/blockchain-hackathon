@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+
+{% block title %}Requests{% endblock title %}
+
+{% block content %}
+<!-- <div style="margin:40px;" class=""> -->
+<div class="wrapper wrapper-content animated fadeInRight">
+<nav  class="navbar white-bg ibox-content" >
+    <div class="navbar-header">
+        <ul class="nav navbar-top-links navbar-left">
+          <li>
+            <a href="#">All Requests</a>
+          </li>
+          <li>
+            <a href="#">Felling Requests</a>
+          </li>
+          <li>
+            <a href="#">Transit Requests</a>
+          </li>
+        </ul>
+        <!-- <a href="#" class="navbar-brand">Project-name</a> -->
+    </div>
+        <ul class="nav navbar-top-links navbar-right">
+          <li>
+            <button type="button" class="btn btn-w-m btn-primary btn-lg">Request Felling Permission</button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-w-m btn-primary btn-lg">Request Transit Permission</button>
+          </li>
+        </ul>
+</nav>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+<div class="col-lg-6">
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Type</th>
+                    <th>Tree Count</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for request in requests %}
+                <tr>
+                    <td>{{ request.id|e }}</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{request.status}}</td>
+                    <td>
+                      <a href="new_felling_request.html">
+                          <i class="fa fa-chevron-right"></i>
+                      </a>    
+                    </td>
+                    <!-- TODO -->
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock content %}

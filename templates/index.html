@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block title %}Log in {% endblock %}
+{% block nav %}{% endblock %}
+
 {% block content %}
 
   <body class="gray-bg">
@@ -13,7 +15,7 @@
 
               </div>
               <p>Login</p>
-              <form class="m-t" role="form" action="/list_request">
+              <form class="m-t" role="form" action="/dashboard">
                   <div class="form-group">
                       <input type="email" class="form-control" placeholder="Username" required="">
                   </div>
