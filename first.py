@@ -2,7 +2,7 @@
 from flask import Flask
 from flask import *
 from frames.department import Department
-import add_block as addblock
+import modules.add_block as addblock
 
 
 app = Flask(__name__,
