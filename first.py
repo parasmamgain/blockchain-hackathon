@@ -43,7 +43,7 @@ def index():
 	    family_name='intkey',
 	    family_version='1.0',
 	    inputs=['1cf1266e282c41be5e4254d8820772c5518a2c5a8c0c7f7eda19594a7eb539453e1ed7'],
-	    outputs=['1cf1266e282c41be5e4254d8820772c5518a2c5a8c0c7f7eda19594a7eb539453e1ed7']
+	    outputs=['1cf1266e282c41be5e4254d8820772c5518a2c5a8c0c7f7eda19594a7eb539453e1ed7'],
 	    payload_encoding='application/cbor')
 
 	## create the txn packet
