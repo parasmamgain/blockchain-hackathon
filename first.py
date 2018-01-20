@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 from flask import Flask
+from flask import *
 from frames.department import Department
 
 app = Flask(__name__)
 
+# , methods=['GET', 'POST']
 @app.route('/')
 def index():
 	forest_dept = {
@@ -12,16 +14,20 @@ def index():
 		'link_from': '',
 		'link_to': ''
 	}
+	# processes = Department(forest_dept)
+	# processes.updateDatato(88888)
+	# return some.getData("1234") + str(some.getDataFrom())
+	return render_template('index.html')
 
-	some = Department(forest_dept)
-	some.updateDatato(88888)
-	return some.getData("1234") + str(some.getDataFrom())
-    #return "Hello, World!"
-
-@app.route('/yeap')
-def yeap():
-    return "The page two!"
+@app.route('/list_request')
+def list_request():
+    return render_template('list_requests.html')
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+# on start, spawn dashboard.
