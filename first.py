@@ -3,8 +3,10 @@ from flask import Flask
 from flask import *
 from frames.department import Department
 
-app = Flask(__name__)
-app._static_folder = "/static"
+app = Flask(__name__,
+	static_url_path='', 
+    static_folder='static',
+    template_folder='templates')
 
 # , methods=['GET', 'POST']
 @app.route('/')
