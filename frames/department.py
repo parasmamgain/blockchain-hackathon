@@ -6,14 +6,19 @@ class Department(object):
 		super(Department, self).__init__()
 		self.name = arg['name']
 		self.id = arg['id']
-		self.link_from = arg['link_from']
-		self.link_to = arg['link_to']
-
-	def getData(self, data):
-		return "Some statement" + data
-
-	def updateDatato(self, update):
-		self.y = update or self.y
-
-	def getDataFrom(self):
-		return self.y
+		
+	# def view_request(self):
+	# 	return "Some statement"
+    #
+	# # def assign_request_status(self, request, status):
+	# 	# self.request = status or self.y
+    #
+	# def assign_request_msg(self, msg):
+	# 	self.y = status_msg or self.y
+    #
+	# def getDataFrom(self):
+	# 	return self.y
+    #
+	# def rules(self):
+	# 	return self
+	# 	# rules, approved status, approved message
