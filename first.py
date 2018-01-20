@@ -6,7 +6,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	some = Department()
+	forest_dept = {
+		'name': "Forst Dept",
+		'id': '12',
+		'link_from': '',
+		'link_to': ''
+	}
+
+	some = Department(forest_dept)
 	some.updateDatato(88888)
 	return some.getData("1234") + str(some.getDataFrom())
     #return "Hello, World!"
