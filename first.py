@@ -55,16 +55,20 @@ def index():
 	## we could be encoding this further .. if the same was being used to update into a chain .. over some other network
 
 	## We need to create the BatchEncoder to create the batches
-	batcher = batchEncoder(private_key)
+	batcher = BatchEncoder(private_key)
 
 	## create the batch 
 	batch = batcher.create(txn)
+	print(' the batch is ')
 
 	## just like the txn encoder .. the batch encoder can also be serialized if being sent over a network .. 
 	## but we skip it for now
 	#batch_bytes = batcher.encode([batch, batch2, batch3])
 
 	batch_bytes = batcher.create_encoded(txn)
+
+	output = open('intkey.batches', 'wb')
+	output.write(batch_bytes)
 
 
 	## submitting the batches to the validator
