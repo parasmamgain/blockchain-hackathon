@@ -4,6 +4,7 @@ from flask import *
 from frames.department import Department
 
 app = Flask(__name__)
+app._static_folder = "/static"
 
 # , methods=['GET', 'POST']
 @app.route('/')
