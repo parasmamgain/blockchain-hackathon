@@ -5,7 +5,6 @@ from frames.user import User
 from frames.request import Request
 import json
 
-
 app = Flask(__name__)
 
 # , methods=['GET', 'POST']
@@ -22,7 +21,7 @@ def show_dashboard():
 
 	req_type = request.args.get('type')
 	if not req_type == None:
-		requests = [r for r in requests if r['type'] == req_type]	
+		requests = [r for r in requests if r['type'] == req_type]
 
 	return render_template('dashboard.html', requests=requests)
 
