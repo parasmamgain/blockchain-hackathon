@@ -5,7 +5,11 @@ from frames.user import User
 from frames.request import Request
 
 
-app = Flask(__name__)
+
+app = Flask(__name__,
+	static_url_path='',
+    static_folder='static',
+    template_folder='templates')
 
 # , methods=['GET', 'POST']
 @app.route('/')
@@ -19,6 +23,7 @@ def index():
 	# processes = Department(forest_dept)
 	# processes.updateDatato(88888)
 	# return some.getData("1234") + str(some.getDataFrom())
+	addblock.add()
 	return render_template('index.html')
 
 @app.route('/dashboard')
