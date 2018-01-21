@@ -3,48 +3,25 @@ from flask import Flask
 from flask import *
 from frames.user import User
 from frames.request import Request
-
-
+import json
 
 app = Flask(__name__)
 
 # , methods=['GET', 'POST']
 @app.route('/')
 def index():
-	forest_dept = {
-		'name': "Forst Dept",
-		'id': '12',
-		'link_from': '',
-		'link_to': ''
-	}
-	# processes = Department(forest_dept)
-	# processes.updateDatato(88888)
-	# return some.getData("1234") + str(some.getDataFrom())
-	# addblock.add()
 	return render_template('index.html')
 
 @app.route('/dashboard')
 def show_dashboard():
-	user1 = {
-		"id": "001",
-		"is_logged_in": False,
-		"requests": ["01", "02"]
-	}
-	req1 = {
-	"id": "01",
-	"timestamp":"t62u3ygq",
-	"status":"In Queue",
-	"category": "Felling"
-	}
-	req2 = {
-	"id": "02",
-	"timestamp":"t62u3sdygq",
-	"status":"In Process",
-	"category": "Transit"
-	}
-	user = User(user1)
-	user.is_logged_in = True
-	requests = user.requests
+
+	requests_json = open('data/requests.json')
+	request_str = requests_json.read()
+	requests = json.loads(request_str)
+
+	req_type = request.args.get('type')
+	if not req_type == None:
+		requests = [r for r in requests if r['type'] == req_type]
 
 	return render_template('dashboard.html', requests=requests)
 
