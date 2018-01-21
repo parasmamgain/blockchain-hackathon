@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row wrapper border-bottom page-heading">
+  <h2><!-- Request ID Number -->dsbj</h2>
+    <p><!-- Request status --></p>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="ibox-content">
+    <div class="form-group">
+      <h3 class="m-t-none m-b">Request Date {{request.date}}</h3>
+
+    <h3 class="m-t-none m-b"><!-- Number --> of trees available for felling</h3>
+    <p><!-- Number --> of <!-- Species 1 --></p>
+    <p><!-- Number --> of <!-- Species 2 --></p>
+    <h3 class="m-t-none m-b"><!-- Number --> acres</h3>
+  </div>
+    </div>
+
+  </div>
+
+  <div class="col-lg-4">
+    <div class="ibox-title">
+      <h5>Location</h5>
+    </div>
+    <div class="ibox-content">
+      <p>Insert picture here</p>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="ibox-title">
+      <h5>Status Report</h5>
+    </div>
+    <div class="ibox-content">
+      <ul>
+        <li>
+          <i class="fa fa-tick" ></i>
+          Location Verification
+        </li>
+        <li>Land Verification</li>
+        <li>Tree Ownership Verification</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <div class="row wrapper border-bottom gray-bg page-heading">
+    <h2>Tree Details</h2>
+    <div class="ibox-title">
+      <h5>Number, Tree Species </h5>
+    </div>
+      <div class="ibox-content">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Tree ID</th>
+            <th>Age</th>
+            <th>Survey Number</th>
+            <th>Lat, Long</th>
+            <th>View Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+             <td></td>
+              <td></td>
+            <td>
+              <a style="color:black;" href="view-info" class="text-center">
+                  <i class="fa fa-info-circle fa-lg"></i>
+              </a>
+            </td>
+            <!-- TODO populate table-->
+        </tr>
+        </tbody>
+    </table>
+  </div>
+  </div>
+
+
+{% endblock %}

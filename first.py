@@ -7,9 +7,10 @@ from frames.request import Request
 
 
 app = Flask(__name__,
+
 	static_url_path='',
     static_folder='static',
-    template_folder='templates')
+template_folder='templates')
 
 # , methods=['GET', 'POST']
 @app.route('/')
@@ -23,7 +24,7 @@ def index():
 	# processes = Department(forest_dept)
 	# processes.updateDatato(88888)
 	# return some.getData("1234") + str(some.getDataFrom())
-	addblock.add()
+	# addblock.add()
 	return render_template('index.html')
 
 @app.route('/dashboard')
@@ -55,10 +56,12 @@ def show_dashboard():
 def new_felling_request():
 	return render_template('new_felling_request.html')
 
+@app.route('/request-info')
+def see_info():
+	return render_template('request_info.html')
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-# on start, spawn dashboard.
