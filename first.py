@@ -30,8 +30,20 @@ def new_felling_request():
 	return render_template('new_felling_request.html')
 
 @app.route('/request-info')
-def see_info():
-	return render_template('request_info.html')
+def request_info():
+
+	trees_json = open('data/trees.json')
+	trees_str = trees_json.read()
+	trees = json.loads(trees_str)
+
+	requests_json = open('data/requests.json')
+	request_str = requests_json.read()
+	requests = json.loads(request_str)
+
+	req_id = request.args.get('_id')
+	requests = [r for r in requests if r['_id'] == req_id]
+
+	return render_template('request_info.html', trees=trees, requests = requests )
 
 
 
