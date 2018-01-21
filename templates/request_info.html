@@ -3,16 +3,16 @@
 {% block content %}
 
 <div class="row wrapper border-bottom page-heading">
-  <h2><!-- Request ID Number -->dsbj</h2>
+  <h2>{{request._id}}</h2>
     <p><!-- Request status --></p>
 </div>
 
-<div class="row">
+<div class="row" >
   <div class="col-lg-4">
     <div class="ibox-title">
       <h5>Request Details</h5>
     </div>
-    <div class="ibox-content">
+    <div class="ibox-content"  style="height: 350px;">
     <div class="form-group">
       <h3 class="m-t-none m-b">Request Date {{request.date}}</h3>
 
@@ -29,8 +29,8 @@
     <div class="ibox-title">
       <h5>Location</h5>
     </div>
-    <div class="ibox-content">
-      <img alt="image" class="img-responsive" src="../static/img/mapfull.png">
+    <div class="ibox-content" style="height: 350px;">
+      <img alt="image" class="img-responsive" src="../static/img/mapfull.png" style="height: 330px; width: 410px;">
     </div>
   </div>
 
@@ -38,7 +38,7 @@
     <div class="ibox-title">
       <h5>Status Report</h5>
     </div>
-    <div class="ibox-content">
+    <div class="ibox-content" style="height: 350px;">
       <ul>
         <li>
           <i class="fa fa-tick" ></i>
@@ -51,10 +51,10 @@
   </div>
 </div>
 
-  <div class="row wrapper border-bottom gray-bg page-heading">
+  <div class="row wrapper border-bottom gray-bg page-heading" style="margin-top:20px;">
     <h2>Tree Details</h2>
     <div class="ibox-title">
-      <h5>Number, Tree Species </h5>
+      <h5>Tree Species </h5>
     </div>
       <div class="ibox-content">
     <table class="table table-striped">
