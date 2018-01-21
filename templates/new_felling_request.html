@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<link href="../static/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+{% endblock head %}
+
+
+{% block content %}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>New Felling Request</h2>
+    </div>
+</div>
+
+<div class="row wrapper border-bottom gray-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Select Tree</h2>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+      <div class="col-lg-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" placeholder="Search">
+                      </div>
+
+                      <div class="form-group">
+                      <h3 class="m-t-none m-b">Filter</h3>
+                      <div class="input-group m-b">
+                          <div class="input-group-btn">
+                              <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">All Locations<span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Action</a></li>
+                              </ul>
+                          </div>
+                          <input type="text" class="form-control"></div>
+
+                        <div class="input-group m-b">
+                            <div class="input-group-btn">
+                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">All Species<span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control"></div>
+
+                            <div class="input-group m-b">
+                                <div class="input-group-btn">
+                                    <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">All Owners<span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control"></div>
+                          </div>
+
+
+                      <div class="form-group">
+                      <h3 class="m-t-none m-b">Girth</h3>
+                      <!-- TODO: implement sliders -->
+                      <div id="ionrange_3"></div>
+
+                    </div>
+
+                    <div class="form-group">
+                    <h3 class="m-t-none m-b">Upload Tree </h3>
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <span class="btn btn-default btn-file">
+                          <!-- <span class="fileinput-new">Select file</span> -->
+                          <!-- <span class="fileinput-exists">Change</span> -->
+                          <input type="file" name="...">
+                        </span>
+                        <span class="fileinput-filename"></span>
+                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none"></a>
+                    </div>
+                  </div>
+
+                  </form>
+              </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+      <div class="col-lg-6">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#tab-1">List View</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-2">Map View</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <div class="panel-body">
+                      <div class="ibox float-e-margins">
+                          <div class="ibox-content">
+                              <table class="table table-striped">
+                                  <thead>
+                                  <tr>
+                                      <th></th>
+                                      <th>Tree ID</th>
+                                      <th>Species</th>
+                                      <th>Age</th>
+                                      <th>Survey Number</th>
+                                      <th>Lat, Long</th>
+                                      <th>View Info</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                      <td>
+                                        <div class="i-checks"><label> <input type="checkbox" value=""> </label></div>
+                                      </td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                       <td></td>
+                                        <td></td>
+                                      <td>
+                                        <a style="color:black;" href="view-info" class="text-center">
+                                            <i class="fa fa-info-circle fa-lg"></i>
+                                        </a>
+                                      </td>
+                                      <!-- TODO populate table-->
+                                  </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                </div>
+              </div>
+
+                <div id="tab-2" class="tab-pane">
+                    <div class="panel-body">
+<!-- TODO: map picture here -->
+                    </div>
+                </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+      <div class="col-lg-3">
+        <div class="row">
+
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>Details</h5>
+            <div class="ibox-tools">
+              <a style="color:black;" href="#" >
+                  <i class="fa fa-chevron-up"></i>
+              </a>
+            </div>
+          </div>
+            <div class="ibox-content">
+            <div class="form-group">
+            <h3 class="m-t-none m-b"><!-- Number --> of trees available for felling</h3>
+            <p><!-- Number --> of <!-- Species 1 --></p>
+            <p><!-- Number --> of <!-- Species 2 --></p>
+            <h3 class="m-t-none m-b"><!-- Number --> acres</h3>
+
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row wrapper wrapper-content white-bg">
+          <div class="ibox float-e-margins">
+
+          <div class="i-checks"><label> <input type="checkbox" value="">Large agreement comes here </label></div>
+
+        </div>
+      </div>
+
+      <div class="row wrapper-content">
+        <div class="ibox float-e-margins">
+          <button type="button" class="btn btn-w-m btn-primary btn-lg" >Request Permission</button>
+        </div>
+
+      </div>
+
+        </div>
+      </div>
+
+<script src="../static/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+
+{% endblock %}
